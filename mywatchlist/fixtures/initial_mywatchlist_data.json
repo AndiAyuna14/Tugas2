@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 1,
+        "fields": {
+            "watched": "Sudah ditonton",
+            "title": "Itaewon Class",
+            "rating": "16,5%",
+            "release_date": 2020,
+            "review": "Drama ini akan mengajakmu mengikuti jatuh bangun usaha Park Sae-ro-yi dalam mendirikan restoran dibantu dengan orang-orang terdekatnya."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 2,
+        "fields": {
+            "watched": "Belum ditonton",
+            "title": "Vincenzo",
+            "rating": "14,6%",
+            "release_date": 2021,
+            "review": "Menceritakan tentang seorang pengacara mafia keturunan korea yang tinggal di Italia kembali ke negaranya untuk menjatuhkan penjahat yang kebal hukum."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 3,
+        "fields": {
+            "watched": "Sudah ditonton",
+            "title": "Reply 1988",
+            "rating": "18,8%",
+            "release_date": 2015,
+            "review": "Menceritakan lima orang sahabat yang hidup bertetangga di tahun 1988 yang diwarnai dengan aksi lucu tokoh-tokohnya."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 4,
+        "fields": {
+            "watched": "Belum ditonton",
+            "title": "Goblin",
+            "rating": "18,6%",
+            "release_date": 2016,
+            "review": "Goblin mengkisahkan tentang seorang Jenderal Kim Shin yang dikutuk menjalani kehidupan abadi di bumi sebagai Goblin. Cerita fantasi yang dikemas dengan romantis, lucu, dan penuh drama."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 5,
+        "fields": {
+            "watched": "Sudah ditonton",
+            "title": "Strong Woman Do Bong Soon",
+            "rating": "9,67%",
+            "release_date": 2017,
+            "review": "Film ini memiliki genre campuran antara komedi romantis, fantasi, action, dan thriller. Film ini menceritakan seorang gadis imut yang memiliki kekuatan luar biasa sejak lahir."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 6,
+        "fields": {
+            "watched": "Belum ditonton",
+            "title": "W - Two World Apart",
+            "rating": "12,8%",
+            "release_date": 2016,
+            "review": "Kisah tentang seorang perempuan yang ditarik masuk ke dalam cerita di dalam komputer ayahnya dan bertemu sesosok pria misterius. Drama ini memasukan unsur fantasi, thriller, misteri, sampai komedi romantis."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 7,
+        "fields": {
+            "watched": "Sudah ditonton",
+            "title": "I Can Hear Your Voice",
+            "rating": "19,1%",
+            "release_date": 2013,
+            "review": "Bercerita tentang seorang pengacara perempuan yang bertemu seorang pemuda yang bisa membaca pikiran. Mereka berdua akan menangain berbagai kasus. "
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 8,
+        "fields": {
+            "watched": "Belum ditonton",
+            "title": "Vagabond",
+            "rating": "13%",
+            "release_date": 2019,
+            "review": "Film ini berkisah tentang seorang yang menyelidiki kematian keponakannya dalam sebuah kecelakaan pesawat. Ia  bertemu seorang agen intelijen perempuan yang kemudia membongkar kasus misterius bersama."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 9,
+        "fields": {
+            "watched": "Sudah ditonton",
+            "title": "Pinocchio",
+            "rating": "13,3%",
+            "release_date": 2015,
+            "review": "Mengkisahkan tentang seorang perempuan yang menderita sindrom Pinocchio yang menjadi batu sandungan untuk berkarir di dunia jurnalistik."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 10,
+        "fields": {
+            "watched": "Sudah ditonton",
+            "title": "Extraordinary Attorney Woo",
+            "rating": "7,9%",
+            "release_date": 2022,
+            "review": "Bercerita tentang Woo Young Woo yang memiliki gangguan spektrum autisme dan memiliki otak yang jenius,  hingga menjadi pengacara autis pertama di Korea Selatan."
+        }
+    }
+]
