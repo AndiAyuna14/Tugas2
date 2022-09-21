@@ -26,6 +26,7 @@ format HTML, XML, dan JSON.
 
 
 
+
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
 
@@ -46,8 +47,13 @@ deploy applikasi mywatchlist ke heroku.
 
 
 
+
+
 Berikut screenshot Postman:
 
+![html](https://user-images.githubusercontent.com/112320001/191573377-ebce84ac-d3ed-47ca-8e81-1a9f415e7c30.jpg)
+![json](https://user-images.githubusercontent.com/112320001/191573410-f663b0f7-a08d-4699-a563-7cd6c3e06179.jpg)
+![xml](https://user-images.githubusercontent.com/112320001/191573447-e167193c-01a6-4847-bc2a-267c524e0d67.jpg)
 
 
 
