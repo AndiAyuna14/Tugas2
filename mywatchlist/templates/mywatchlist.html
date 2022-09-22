@@ -30,4 +30,10 @@
     {% endfor %}
   </table>
 
+  {% if film_sudah_ditonton < film_belum_ditonton %}
+    <h3>Wah, kamu masih sedikit menonton!</h3>
+  {% else %}
+    <h3>Selamat, kamu sudah banyak menonton!</h3>
+  {% endif %}
+
  {% endblock content %}
