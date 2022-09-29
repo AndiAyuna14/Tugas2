@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>To Do List</h1>
+<h4>Username: {{username}}</h4>
+
+<table>
+    <tr>
+    <th>User</th>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Description</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for i in list_task %}
+    <tr>
+        <th>{{i.user}}</th>
+        <th>{{i.date}}</th>
+        <th>{{i.title}}</th>
+        <th>{{i.description}}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>   </p>
+<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+<p>   </p>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+{% endblock content %}
