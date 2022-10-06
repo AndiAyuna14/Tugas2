@@ -1,29 +1,201 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>To Do List</h1>
-<h4>Username: {{username}}</h4>
+<style>
+body {
+    background-color: #FCF8E8;
+    padding: 30px 10 px;
+}
+h1, h4, h2 {
+    color: #DF7861;
+    text-align: center;
+    font-family: verdana;
+}
+.card{
+    width: 40%;
+    margin-bottom: 15pt;
+    margin-inline: 20px auto;
+    background-color: #94B49F;
+    transform:
+        rotateX(0deg)
+        rotateZ(0deg);
+    transform-style: preserve-3d;
+    border-radius: 25px;
+    box-shadow:
+        1px 1px 0 1px #f8d8e6,
+        -1px 0 28px 0 rgba(3, 0, 154, 0.01),
+        28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+    transition:
+        .4s ease-in-out transform,
+        .4s ease-in-out box-shadow;
+    font-family: verdana;
+    color: #FCF8E8;
+    padding: 25px;
+    display: inline-block;
+}
+.card:hover{
+    transform:
+        translate3d(0px, -16px, 0px)
+        rotateX(0deg)
+        rotateZ(0deg);
+    box-shadow:
+        1px 1px 0 1px #f8d8e6,
+        -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+        54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+}
+.row {
+    text-align: center;
+    margin: auto;
+}
+table {
+    border-collapse : collapse;
+    border: 3px solid;
+    border-color: #94B49F;
+    margin : auto;
+    background-color: #FCF8E8;
+    width: 40%;
 
-<table>
-    <tr>
-    <th>User</th>
-    <th>Date</th>
-    <th>Title</th>
-    <th>Description</th>
-    </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for i in list_task %}
-    <tr>
-        <th>{{i.user}}</th>
-        <th>{{i.date}}</th>
-        <th>{{i.title}}</th>
-        <th>{{i.description}}</th>
-    </tr>
-    {% endfor %}
-</table>
+}
+th {
+    background-color: #94B49F;
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+td, th{
+    border: 3px solid rgb(11,9,9)
+    padding: 1rem;
+    font-family: verdana;
+    font-size: smaller;
+}
+.button-logout {
+    justify-content: center;
+    margin: auto;
+    background: #ECB390;
+    border: 2px solid #ECB390;
+    border-radius: 20px;
+    padding: 10px 32px;
+    text:align: center;
+    display: inline-block;
+    font-size: 18px;
+    color: #DF7861;
+}
+.button-logout:hover{
+    background-color: #DF7861;
+    color:#ECB390;
+}
+.button-56{
+    border radius: 20px;
+    content: "";
+    align-items: center;
+    background color: #FCF8E8;
+    border: 2px solid #DF7861;
+    border-radius: 20px;
+    color: #DF7861;
+    font-family: sans-serif;
+    font-size: 19px;
+    justify-content: center;
+    max-width : 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    height: 48px; 
+}
+.button-56:hover{
+    background-color: #DF7861;
+    color:#ECB390;
+}
+.container {
+    text-align: center;
+    margin: auto;
+}
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #ECB390;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: medium;
+    font-family: sans-serif;
+    color: #FCF8E8;
+}
+li{
+    display:inline;
+}
+.navbar-brand{
+    color: #FCF8E8;
 
-<p>   </p>
-<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
-<p>   </p>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+}
+.btn {
+    color: #FCF8E8;
+    border-radius: 10px;
+    background-color: #94B49F;
+    font-size: small;
+    padding: 7px 12px;
+    box-shadow: 0 0 10px rgb(137, 110, 110);
+}
+
+
+</style>
+
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="navbar-brand" href="#"> &#128195 Welcome, {{user.username}}</span>
+                <a style="float: right;" href="{% url 'todolist:logout' %}" class="btn">logout</a>
+    
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>&#127804; To Do List &#127804;</h1>
+    <h4>Hai {{username}}!&#128075;</h4>
+    <h2> Your To Do List</h2>
+
+    <!--table>
+        <tr>
+        <th>&#128197; Date</th>
+        <th>&#128204; Title</th>
+        <th>&#128196; Description</th>
+        </tr>
+        {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+        {% for i in list_task %}
+        <tr>
+            <td>{{i.date}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.description}}</td>
+        </tr>
+        {% endfor %}
+    </table-->
+
+    <div class="row">
+        {% for todo in list_task %}
+        <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{todo.title}}</h5>
+            <p class="card-text">{{todo.date}}</p>
+            <p class="card-text">{{todo.description}}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <p>   </p>
+    <div class="container">
+        <!--button class="button-56" role="button"><a href="{% url 'todolist:create_task' %}">New Task</a></button-->
+        <a href="{% url 'todolist:create_task' %}"><button class="button-56" role="button">+ New Task</button></a>
+        <p>   </p>
+        <!--button class ="button-logout"><a href="{% url 'todolist:logout' %}">Logout</a></button-->
+        <a href="{% url 'todolist:logout' %}"><button class="button-logout">Logout</button></a>
+    </div>
+</body>
 {% endblock content %}
