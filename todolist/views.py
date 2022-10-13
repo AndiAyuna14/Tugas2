@@ -1,5 +1,8 @@
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import render
 from urllib import response
+from django.http import HttpResponse
+from django.core import serializers
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -21,6 +24,29 @@ def show_todolist(request):
         'npm': "2106638265",
     }
     return render(request, "todolist.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request):
+    data_task = Task.objects.filter(user=request.user)
+    context = {
+        'list_task' : data_task,
+        'username' : request.user,
+    }
+    return render(request, "todolist_ajax.html", context)
+
+def show_json(request):
+    data_task = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data_task))
+
+def add(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        
+        data = Task(user=request.user, title=title, description=description)
+        data.save()
+        return HttpResponse(b"CREATED", status=201)
+    return HttpResponseNotFound()
 
 def register(request):
     form = UserCreationForm()
@@ -64,3 +90,6 @@ def add_new_task(request):
             instance.save()
             return redirect('todolist:show_todolist')
     return render(request, "create_task.html", response)            
+
+
+
